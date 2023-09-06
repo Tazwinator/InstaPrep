@@ -25,7 +25,8 @@ export default function App() {
     const { register, handleSubmit } = useForm<IFormInput>();
     const dispatch = useAppDispatch();
 
-    const onSubmit: SubmitHandler<IFormInput> = (data: IFormInput) =>
+    const onSubmit: SubmitHandler<IFormInput> = () =>
+        //data: IFormInput
         dispatch(getPrep("How are you today?"));
 
     return (

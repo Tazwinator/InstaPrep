@@ -1,7 +1,7 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-const backendURL = "https://api.openai.com/v1/chat/completions";
+//const backendURL = "https://api.openai.com/v1/chat/completions";
 //   process.env.NODE_ENV !== 'production'
 //     ? 'http://127.0.0.1:5000'
 //     : import.meta.env.VITE_SERVER_URL

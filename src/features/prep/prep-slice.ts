@@ -1,5 +1,5 @@
 // DUCKS Pattern
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit"; //, PayloadAction
 import getPrep from "./getPrep";
 
 interface PrepState {
