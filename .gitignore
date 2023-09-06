@@ -1,3 +1,6 @@
+# Temp API Key Storage
+.env
+
 # Logs
 logs
 *.log
