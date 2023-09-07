@@ -4,10 +4,12 @@ import getPrep from "./getPrep";
 
 interface PrepState {
     message: string | undefined;
+    loading: boolean;
 }
 
 const initialState: PrepState = {
     message: "",
+    loading: false,
 };
 
 const prepSlice = createSlice({
@@ -18,12 +20,15 @@ const prepSlice = createSlice({
         builder
             .addCase(getPrep.pending, (state) => {
                 state.message = "loading...";
+                state.loading = true;
             })
             .addCase(getPrep.fulfilled, (state, action) => {
                 state.message = JSON.stringify(action.payload);
+                state.loading = false;
             })
             .addCase(getPrep.rejected, (state, action) => {
                 state.message = action.error.message;
+                state.loading = false;
             });
     },
 });
