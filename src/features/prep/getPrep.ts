@@ -18,9 +18,9 @@ const getPrep = createAsyncThunk("getPrep", async (formData: IFormInput, { rejec
         // GPT Options
         const options: any = {
             temperature: 0.8,
-            max_tokens: 1000,
+            max_tokens: Number(import.meta.env.VITE_GPT_MAX_TOKENS),
         };
-
+        console.log(Number(import.meta.env.VITE_GPT_MAX_TOKENS));
         const openai = axios.create({
             baseURL: "https://api.openai.com/v1",
             headers: {
