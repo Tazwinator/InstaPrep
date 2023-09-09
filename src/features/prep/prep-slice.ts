@@ -1,9 +1,10 @@
 // DUCKS Pattern
 import { createSlice } from "@reduxjs/toolkit"; //, PayloadAction
 import getPrep from "./getPrep";
+import { PathString } from "react-hook-form";
 
 interface PrepState {
-    message: string | undefined;
+    message: PathString;
     loading: boolean;
 }
 
@@ -27,7 +28,7 @@ const prepSlice = createSlice({
                 state.loading = false;
             })
             .addCase(getPrep.rejected, (state, action) => {
-                state.message = action.error.message;
+                state.message = action.error.message ?? "Error";
                 state.loading = false;
             });
     },
